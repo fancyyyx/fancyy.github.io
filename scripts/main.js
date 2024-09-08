@@ -1,15 +1,12 @@
 let myImage = document.querySelector("img");
 
-let currentIndex = 0; // 初始化当前图片索引  
-const images = ["images/z1.jpg", "images/z2.jpg", "images/z3.jpg"]; // 图片数组  
+let currentIndex = 0;  
+const images = ["images/z1.jpg", "images/z2.jpg", "images/z3.jpg"];  
   
-myImage.onclick = function () {  
-  // 更新索引，实现循环  
-  currentIndex = (currentIndex + 1) % images.length;  
-    
-  // 根据更新后的索引设置图片的src属性  
-  myImage.setAttribute("src", images[currentIndex]);  
-};
+function changeImage() {  
+  currentIndex = (currentIndex + 1) % images.length; // 循环切换图片  
+  document.getElementById('myImage').src = images[currentIndex]; // 更新图片源  
+}
 
 let myButton = document.querySelector("button");
 let myHeading = document.querySelector("h1");
